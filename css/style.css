@@ -1,34 +1,67 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 body {
     margin: 0;
     /* Photo by Steinar Engeland on Unsplash */
-    background-image: url("../img/fisherman_sunset.jpg");
-    background-size: 100%;
+    background-image: url("../img/fishing_boat.jpg");
+    /*background-image: url("../img/motorboat.jpg");*/
+    background-size: 100vw 50vh;
     background-attachment: fixed;
+
+    color: white;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1, h2 {
     margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 h2 {
-    color: rgb(90, 90, 90);
+    color: rgb(202, 202, 202);
 }
 
-#navButton{
+#showNavButton{
     width: 3em;
     height: 3em;
-    margin:1em;
 
-    box-shadow: 0px 0px 0 2px;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+
+    box-shadow: 0px 0px 0 2px black;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#navButton img {
+#showNavButton img {
     width: 70%;
     height: 70%;
+}
+
+.navButton {
+    width: 6em;
+    height: 6em;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 2px white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navButton:hover {
+    box-shadow: 0px 0px 0px 5px white; /* Will activate if clicked since this only shows on mobile */
+}
+
+.navButton a {
+    color: white;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.418);
 }
 
 .backgroundLayer {
@@ -48,27 +81,30 @@ h2 {
 }
 
 nav {
-    /*visibility: hidden;*/
-    width: 80vw;
+    width: 60vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: -80vw;
     z-index: 10;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
     transition: left 0.3s;
-    background-color: rgb(182, 10, 10);
+    background-color: rgb(55, 65, 71);
 }
 
 .showNav {
-    /*visibility: visible;*/
     left: 0;
 }
 
 /* Grids */
 
 #startPageWrapper {
-    margin-top: 20vh;
+    margin-top: 30vh;
     max-width: 100vw;
     height: 100vh;
 
@@ -82,24 +118,102 @@ nav {
     ;
 
     grid-template-columns: 100%;
-    grid-template-rows: 30% 60% 50% 60% 10%;
+    grid-template-rows: 40% 60% 50% 60% 10%;
 }
 
 /* Default values */
 #startPageWrapper > * {
-    background-color: white;
+    background-color: rgb(23, 34, 36);
 }
 
-#startPageWrapper header {
+#hero {
     display: flex;
     justify-content: start;
     align-items: center;
     flex-direction: column;
     text-align: center;
 
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.644);
     border-top-left-radius: 1%;
     border-top-right-radius: 1%;
+
+    background: none;
+}
+
+#hero > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: rgb(23, 34, 36);
+}
+
+#hero h1 {
+    height: 50%;
+    width: 50%;
+    /*box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.644);*/
+}
+
+#hero h2 {
+    height: 51%;
+    width: 100%;
+}
+
+/* Media Querys */
+
+@media screen and (min-width: 760px) {
+    body {
+        background-size: 100vw auto;
+        background-position-y: -60vh
+    }
+
+    #startPageWrapper {
+        margin-top: 60vh;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        height: 10vh;
+        left: 0;
+        width: 100vw;
+        max-width: 100%;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.418);
+    }
+
+    #showNavButton {
+        display: none;
+    }
+
+    .navButton {
+        box-shadow: none;
+        border-radius: 0;
+        height: 70%;
+        width: 20%;
+    }
+
+    .navButton:hover {
+        box-shadow: none;
+    }
+    
+    #startPageWrapper section {
+        padding-left: 10em;
+        padding-right: 10em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #startPageWrapper section article {
+        background-color:rgb(55, 65, 71);
+        width: 30%;
+        height: 90%;
+        padding: 1em;
+    }
+
+    #startPageWrapper img {
+        height: 90%;
+        width: auto;
+    }
 }
 
 /* Grid Areas */

@@ -1,4 +1,4 @@
-const button = document.getElementById("navButton");
+const button = document.getElementById("showNavButton");
 const background = document.getElementsByClassName("backgroundLayer")[0];
 const navBar = document.querySelector("nav");
 
@@ -10,4 +10,4 @@ button.addEventListener("click", () => {
 background.addEventListener("click", () => {
     navBar.classList.remove("showNav");
     background.classList.remove("showBackground");
-});
+});t
