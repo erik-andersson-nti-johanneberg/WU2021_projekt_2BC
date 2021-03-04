@@ -10,4 +10,4 @@ button.addEventListener("click", () => {
 background.addEventListener("click", () => {
     navBar.classList.remove("showNav");
     background.classList.remove("showBackground");
-});t
+});

@@ -8,6 +8,11 @@
     --main-color: rgb(23, 34, 36);
     --dark-shadow: rgba(0, 0, 0, 0.418);
     --secondary-color: rgb(55, 65, 71);
+    --brighter-color: rgb(71, 101, 119);
+}
+
+svg {
+    fill: var(--brighter-color);
 }
 
 body {
@@ -15,14 +20,14 @@ body {
     /* Photo by Steinar Engeland on Unsplash */
     background-image: url("../img/fishing_boat.jpg");
     /*background-image: url("../img/motorboat.jpg");*/
-    background-size: 100vw 50vh;
+    background-size: auto 100vh;
     background-attachment: fixed;
 
     color: white;
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin: 0;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -38,7 +43,7 @@ h2 {
 
     position: fixed;
     top: 1em;
-    left: 1em;
+    right: 1em;
 
     box-shadow: 0px 0px 0 2px black;
     border-radius: 100%;
@@ -57,6 +62,7 @@ h2 {
     height: 6em;
     border-radius: 100%;
     box-shadow: 0px 0px 0px 2px white;
+    transition: 0.1s;
 
     display: flex;
     justify-content: center;
@@ -113,13 +119,12 @@ nav {
 /* Grids */
 
 #startPageWrapper {
-    margin-top: 30vh;
     max-width: 100vw;
     height: 100vh;
 
     display: grid;
-    grid-template-areas: 
-    'she'
+    grid-template-areas:
+    'sho'
     'ss1'
     'ss2'
     'ss3'
@@ -127,7 +132,7 @@ nav {
     ;
 
     grid-template-columns: 100%;
-    grid-template-rows: 40% 60% 50% 60% 10%;
+    grid-template-rows: 90% 50% 40% 50% 10%;
 }
 
 /* Default values */
@@ -137,18 +142,24 @@ nav {
 
 #hero {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
     text-align: center;
-
-    border-top-left-radius: 1%;
-    border-top-right-radius: 1%;
 
     background: none;
 }
 
-#hero > * {
+.punchline {
+    width: 60%;
+    height: 50vh;
+}
+
+.punchline span {
+    width: 100%;
+    height: 100%;
+}
+
+.punchline span > * {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,14 +167,27 @@ nav {
     background-color: var(--main-color);
 }
 
-#hero h1 {
+.punchline span h1 {
     height: 50%;
-    width: 50%;
+    width: 100%;
 }
 
-#hero h2 {
-    height: 51%;
+.punchline span h2 {
+    height: 50%;
     width: 100%;
+}
+
+.simpleButton {
+    margin-top: 1em;
+    width: 100%;
+    height: 20%;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    transition: 0.1s;
+}
+
+.simpleButton:hover {
+    background-color: rgb(54, 74, 82);
 }
 
 /* Media Querys */
@@ -171,11 +195,19 @@ nav {
 @media screen and (min-width: 760px) {
     body {
         background-size: 100vw auto;
-        background-position-y: -60vh
+        background-position-y: -10vh
     }
 
     #startPageWrapper {
-        margin-top: 60vh;
+        grid-template-areas: 
+        'sna'
+        'sho'
+        'ss1'
+        'ss2'
+        'ss3'
+        'sfo'
+        ;
+        grid-template-rows: 10% 90% 50% 40% 50% 10%;
     }
 
     nav {
@@ -186,6 +218,22 @@ nav {
         width: 100vw;
         max-width: 100%;
         box-shadow: 0px 5px 20px var(--dark-shadow);
+    }
+
+    #hero > *:nth-child(1) {
+        width:30%;
+        padding-right: 3em;
+    }
+
+    #hero > *:nth-child(2) {
+        padding-left: 3em;
+    }
+
+    #hero::after {
+        content: "";
+        width: 50vw;
+        height: 50vh;
+        background-color: var(--brighter-color);
     }
 
     #showNavButton {
@@ -203,7 +251,7 @@ nav {
         box-shadow: none;
     }
     
-    #startPageWrapper section {
+    #startPageWrapper > section {
         padding-left: 10em;
         padding-right: 10em;
         display: flex;
@@ -211,7 +259,7 @@ nav {
         align-items: center;
     }
     
-    #startPageWrapper section article {
+    #startPageWrapper > section article {
         background-color: var(--secondary-color);
         width: 30%;
         height: 90%;
@@ -224,10 +272,29 @@ nav {
     }
 }
 
+/* Misc */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Grid Areas */
 
-#startPageWrapper header {
-    grid-area: she;
+#hero {
+    grid-area: sho;
+}
+
+nav {
+    grid-area: sna;
 }
 
 #startPageWrapper section:nth-of-type(1) {
