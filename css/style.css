@@ -8,7 +8,8 @@
     --main-color: rgb(23, 34, 36);
     --dark-shadow: rgba(0, 0, 0, 0.418);
     --secondary-color: rgb(55, 65, 71);
-    --brighter-color: rgb(71, 101, 119);
+    --brighter-color: rgb(71, 103, 121);
+    --brighter-color2: rgb(66, 102, 124);
 }
 
 svg {
@@ -18,13 +19,19 @@ svg {
 body {
     margin: 0;
     /* Photo by Steinar Engeland on Unsplash */
-    background-image: url("../img/fishing_boat.jpg");
+    /*background-image: url("../img/fishing_boat.jpg");*/
+    background-color: var(--brighter-color2);
     /*background-image: url("../img/motorboat.jpg");*/
     background-size: auto 100vh;
     background-attachment: fixed;
-
+    
     color: white;
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: white;
+    text-shadow: 1px 1px 10px var(--dark-shadow);
 }
 
 h1, h2, h3 {
@@ -74,10 +81,6 @@ h2 {
     box-shadow: 0px 0px 0px 5px white; /* Will activate if clicked since this only shows on mobile */
 }
 
-.navButton a {
-    color: white;
-    text-shadow: 1px 1px 10px var(--dark-shadow);
-}
 
 .backgroundLayer {
     position: fixed;
@@ -154,12 +157,12 @@ nav {
     height: 50vh;
 }
 
-.punchline span {
+.punchline div {
     width: 100%;
     height: 100%;
 }
 
-.punchline span > * {
+.punchline div > * {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,14 +170,18 @@ nav {
     background-color: var(--main-color);
 }
 
-.punchline span h1 {
+.punchline div h1 {
     height: 50%;
     width: 100%;
 }
 
-.punchline span h2 {
+.punchline div h2 {
     height: 50%;
     width: 100%;
+}
+
+#hero img {
+    display: none;
 }
 
 .simpleButton {
@@ -188,6 +195,12 @@ nav {
 
 .simpleButton:hover {
     background-color: rgb(54, 74, 82);
+    cursor: pointer;
+}
+
+#startPageWrapper > section {
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 /* Media Querys */
@@ -207,7 +220,7 @@ nav {
         'ss3'
         'sfo'
         ;
-        grid-template-rows: 10% 90% 50% 40% 50% 10%;
+        grid-template-rows: 10% 90% 60% 50% 60% 10%;
     }
 
     nav {
@@ -229,11 +242,10 @@ nav {
         padding-left: 3em;
     }
 
-    #hero::after {
-        content: "";
+    #hero img {
+        display: block;
         width: 50vw;
         height: 50vh;
-        background-color: var(--brighter-color);
     }
 
     #showNavButton {
@@ -251,7 +263,7 @@ nav {
         box-shadow: none;
     }
     
-    #startPageWrapper > section {
+    .infoSection {
         padding-left: 10em;
         padding-right: 10em;
         display: flex;
@@ -259,17 +271,17 @@ nav {
         align-items: center;
     }
     
-    #startPageWrapper > section article {
+    .infoSection article {
         background-color: var(--secondary-color);
         width: 30%;
         height: 90%;
         padding: 1em;
     }
 
-    #startPageWrapper img {
+    /*#startPageWrapper > img {
         height: 90%;
         width: auto;
-    }
+    }*/
 }
 
 /* Misc */
