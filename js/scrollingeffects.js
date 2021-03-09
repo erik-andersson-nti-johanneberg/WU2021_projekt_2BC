@@ -1,3 +1,14 @@
+const showNavButton = document.getElementById("showNavButton");
+const body = document.getElementById("hero");
+
+body.addEventListener("scroll", () => {
+    console.log(window.scrollY)
+    if(window.scrollY >= 0.9*window.innerHeight) {
+        showNavButton.classList.toggle("changeColor");
+    }
+});
+
+/*
 const getIndexFromTag = (emtList, tagName) => {
     index = undefined;
     for(let e = 0; e < emtList.length; e++) {
@@ -8,7 +19,6 @@ const getIndexFromTag = (emtList, tagName) => {
     return index;
 }
 
-/*
 const section1 = document.getElementsByTagName("section")[0];
 const textBox1 = section1.children[getIndexFromTag(section1.children, "article")];
 

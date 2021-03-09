@@ -8,33 +8,62 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="showNavButton"><img src="img/svg/hamburger.svg" alt="Expand navbar"></div>
+    <div id="showNavButton">
+        <svg viewBox="0 0 100 80" width="40" height="40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g color="currentColor">
+              <rect width="100" height="20" fill="currentColor"></rect>
+              <rect y="30" width="100" height="20" fill="currentColor"></rect>
+              <rect y="60" width="100" height="20" fill="currentColor"></rect>
+            </g>
+        </svg>
+    </div>
     <div class="backgroundLayer">GG</div>
     <nav>
-        <div class="navButton"><a href="">Vår förening</a></Knapp></div>
+        <div class="navButton"><a href="about.html">Vår förening</a></Knapp></div>
         <div class="navButton">Nyheter</div>
         <div class="navButton">Kontakt</div>
     </nav>
 
-    <div id="aboutWrapper">
+    <div id="contactWrapper">
         <header>
             <h2>Kontakta oss:</h2>
         </header>
         <main>
-            <article class="contactarticle">
-                <span class="title">Föreningsansvarig (Johnny)</span>
-                <span class="telephone">+46 828 645 123</span>
-                <span class="email"><a href="">john@gmail.com</a></span>
+            <article class="contactArticle">
+                <h4>Föreningsansvarig</h4>
+                <span class="title"> (Johnny)</span>
+                <span class="telephone">Tel: +46 828 645 123</span>
+                <span class="email">Mail: <a href="">john@gmail.com</a></span>
             </article>
-            <article class="contactarticle">
-                <span class="title">Webmaster (Erik Andersson)</span>
-                <span class="telephone">+46 723 363 152</span>
-                <span class="email"><a href="">erik.andersson0901@gmail.com</a></span>
+            <article class="contactArticle">
+                <h4>Webmasta</h4>
+                <span class="title">Erik Andersson</span>
+                <span class="telephone">Tel: +46 723 363 152</span>
+                <span class="email">Mail: <a href="">erik@gmail.com</a></span>
             </article>
-            <article class="contactarticle">
-                <span class="title">Ledamot (Julia)</span>
-                <span class="telephone">+46 123 456 789</span>
-                <span class="email"><a href="">julia@gmail.com</a></span>
+            <article class="contactArticle">
+                <h4>Ledamot</h4>
+                <span class="title">Julia</span>
+                <span class="telephone">Tel: +46 123 456 789</span>
+                <span class="email">Mail: <a href="">julia@gmail.com</a></span>
+            </article>
+            <article class="contactArticle">
+                <h4>Smakprov</h4>
+                <span class="title">Sigge Tholén</span>
+                <span class="telephone">Tel: +46 707 804 816</span>
+                <span class="email">Mail: <a href="">sigge@gmail.com</a></span>
+            </article>
+            <article class="contactArticle">
+                <h4>Otrygghetsvärd</h4>
+                <span class="title">Alfred Lindell</span>
+                <span class="telephone">Tel: +46 735 121 439</span>
+                <span class="email">Mail: <a href="">julia@gmail.com</a></span>
+            </article>
+            <article class="contactArticle">
+                <h4>Minimumlönsarbetare</h4>
+                <span class="title">Kasper Bergström</span>
+                <span class="telephone">Tel: +46 938 726 532</span>
+                <span class="email">Mail: <a href="">kasper@gmail.com</a></span>
             </article>
         </main>
         <footer>
@@ -43,5 +72,6 @@
     </div>
 
     <script src="js/buttons.js"></script>
+    <script src="js/expandarticles.js"></script>
 </body>
 </html>
